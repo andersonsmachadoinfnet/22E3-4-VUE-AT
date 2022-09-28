@@ -14,33 +14,13 @@
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                     <ul class="navbar-nav px-3">
                         <li class="nav-item">
-                            <router-link class="nav-link" to="/homeview">Home</router-link>
+                            <router-link class="nav-link" to="/principal">Lista de Itens</router-link>
                         </li>
                         <li class="nav-item">
-                            <router-link class="nav-link" to="/orcview">Orçamentos</router-link>
-                        </li>
-                        <li class="nav-item">
-                            <router-link class="nav-link" to="/adorcview">AddOrçamentos</router-link>
-                        </li>
-                        <li class="nav-item">
-                            <router-link class="nav-link" to="/ambienteorc">Ambiente</router-link>
-                        </li>
-                        <li class="nav-item">
-                            <router-link to="/clientview" class="nav-link">Clientes</router-link>
-                        </li>
-                        <li class="nav-item">
-                            <router-link class="nav-link" to="/productview">Insumos</router-link>
+                            <!-- <router-link class="nav-link" to="/cadastro">Cadastrar</router-link> -->
+                            <a class="nav-link" @click="irParaCadastrar">Novo Produto</a>
                         </li>
                     </ul>
-
-                    <!-- <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" @click="logout">Bem-vindo <strong>{{ nomeUsuario }}</strong>. [Sair]</a>
-                        </li>
-                        <li class="nav-item">
-                            <router-link class="nav-link" to="/helpview">Ajuda</router-link>
-                        </li>
-                    </ul> -->
                 </div>
             </div>
         </nav>
@@ -51,18 +31,13 @@
 export default {
   props: {
         menuTitle: {}
-  }//,
-//   computed: {
-//     nomeUsuario () {
-//         return  this.$store.state.users.usuarios[this.$store.state.users.usrLogado-1].nome;
-//     }
-//   },
-//   methods: {
-//     logout() {
-//         this.$store.commit('USR_LOGOUT', -1);
-//         this.$router.replace('/');
-//     }
-//   }
+  },
+  methods: {
+    irParaCadastrar () {
+        this.$store.state.alteraIndice(0);
+        this.$router.replace('/cadastro');
+    }
+  }
 }
 </script>
 

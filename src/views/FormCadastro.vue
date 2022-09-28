@@ -1,20 +1,18 @@
 <template>
     <LvMenu menuTitle ="Assessment"/>
-    <LvCardsProdutos/>
+    <LvCadastro/>
 </template>
   
 <script>
   // @ is an alias to /src
 import LvMenu from '@/components/lvMenu.vue';
-import LvCardsProdutos from '@/components/lvCardsProdutos.vue';
+import LvCadastro from '@/components/lvCadastro.vue';
   
   export default {
-    name: 'FormPrincipal',
+    name: 'FormCadastro',
     components: {
-    // lvMenu,
     LvMenu,
-    LvCardsProdutos
-    // LvCadastro
+    LvCadastro
 }
 }
 </script>
